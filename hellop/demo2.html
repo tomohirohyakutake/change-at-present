@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="index.html">indexへ</a>
+   
+
+
+    <div class="display-div" id="first-div">
+        <h1 class="h1"><span class="google-font">Hello!<br></span>プレゼント交換会</h1>
+        <button id="btn1">プレゼント交換を始める</button>
+    </div>
+    
+    <div class="display-none" id="second-div">
+        <p id="group-name" class="display-none">グループ名はありますか？特にないならとばしてください</p>
+        <button id="btn2">グループ名はとくにない</button> 
+        <form action="">
+        <label for="">
+            グループ名を入力する
+            <input type="text">
+        </label>
+          <input type="submit" id="btn2-2">
+       </form>
+    </div>
+
+    <div class="display-none" id="third-div">
+        <form method="post">
+            <div>
+                <label for="number-date">何人で交換しますか？最大30人<br></label>
+                <input type="number" name="number-date" value="3" 
+                min="3" max="30" />
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+    
+   
+    <div class="display-none" id="fourth-div">
+        <h2>プレゼント交換会　確認</h2>
+        <div>
+            グループ名
+            人数：5人
+        </div>
+        <div>
+            注意事項<br>
+            抽選開始する前に、参加する人全員に番号を付けてください。<br>
+            1から始まって人数分です、<br>
+            抽選結果は２=>７のように表示しますので、自分の番号を忘れないようにしましょう
+        </div>
+        <button>ok,交換抽選はじめ</button>
+        <button>やり直す</button>
+    </div>
+
+
+
+
+    <script>
+
+        const form = document.querySelector("form");
+        console.log(form);
+
+
+        const first_div = document.getElementById("first-div");
+        const second_div = document.getElementById("second-div");
+        const third_div = document.getElementById("third-div");
+        const fourth_div = document.getElementById("fourth-div");
+        const first_btn = document.getElementById("btn1");
+        const second_btn = document.getElementById("btn2");
+        const second_sub_btn = document.getElementById("btn2-2");
+        const third_btn = document.getElementById("btn3");
+        const fourth_btn = document.getElementById("btn4");
+        // ボタンクリック時の処理を定義する
+
+        console.log(second_sub_btn);
+        console.log(second_btn);
+
+        first_btn.addEventListener("click", () => {
+          // 要素を非表示にする
+        //   first_div.style.display = "none";
+          first_div.classList.add("display-none");
+          second_div.classList.remove("display-none");
+          second_div.classList.add("fade-in");
+        });
+
+        // second_btn.addEventListener("click", () => {
+        //   // 要素を非表示にする
+        //   first_div.style.display = "none";
+        //   second_div.classList.add("display-none");
+        //   third_div.classList.remove("display-none");
+        //   third_div.classList.add("fade-in");
+        // });
+ 
+        form.addEventListener("submit", function(event) {
+             event.preventDefault();
+        });
+
+
+        // second_sub_btn.addEventListener("submit", () => {
+        
+        //   second_div.classList.add("display-none");
+        //   // third_div.classList.remove("display-none");
+        //   // third_div.classList.add("fade-in");
+        // });
+
+
+
+        // 空のオブジェクトを作成
+//         let obj = {};
+
+//         // キーと値をランダムに割り当てる
+//         let keys = Array.from({length: 9}, (_, i) => i + 1); // 1から9の整数の配列を作成
+//         let values = Array.from({length: 9}, (_, i) => i + 1); // 1から9の整数の配列を作成
+
+// // キーと値をランダムに選択して割り当てる
+// while (keys.length > 0 && values.length > 0) {
+//   let key = keys[Math.floor(Math.random() * keys.length)]; // キーをランダムに選択する
+//   let value = values[Math.floor(Math.random() * values.length)]; // 値をランダムに選択する
+//   obj[key] = value; // キーと値をオブジェクトに割り当てる
+//   keys.splice(keys.indexOf(key), 1); // 選択されたキーを削除する
+//   values.splice(values.indexOf(value), 1); // 選択された値を削除する
+// }
+
+// // オブジェクトを表示する
+// console.log(obj);
+
+// // キーと値を画面に表示する
+// for (let [key, value] of Object.entries(obj)) {
+//   console.log(`${key} => ${value}`);
+// }
+    </script>
+
+
+
+</body>
+</html>

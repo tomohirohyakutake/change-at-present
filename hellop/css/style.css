@@ -1,0 +1,108 @@
+/* dev */
+
+.demo-div {
+    background : lime;
+    margin-top: 2rem;
+}
+
+#fifth_div {
+    background: pink;
+    /* width: 50%;
+    height: 50px; */
+    margin: auto;
+}
+
+
+/* dev end */
+
+.display-div {
+    margin-top: 1rem;
+    border: 1px skyblue solid;
+}
+ 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {    
+    font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+
+    background: #000;
+    color: aliceblue; 
+    text-align: center;
+    /* position: relative; */
+}
+
+ a {
+    color: aliceblue;
+ }
+
+.google-font {
+    font-family: 'Noto Serif', serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+}
+
+.h1 {
+    /* border: 2px solid red; */
+    /* display: inline-block; */
+    /* position: absolute; */
+    font-size: 1.5rem;
+    color: aliceblue;
+    /* top: 30%; */
+    text-align: center;
+}
+
+
+/* dom_manipulate */
+.display-none {
+    display: none;
+}
+.display-block {
+    display: block;
+}
+
+.anime-img{
+    transform-origin: center center;
+    animation: yurayura 0.5s linear infinite;
+}
+
+/* ゆっくり表示するアニメーション */
+.fade-in {
+    opacity: 0; /* 初期状態は透明度0 */
+    animation: fadeIn 1s ease-in-out forwards; 
+    /* アニメーションを1秒間実行し、最後の状態を維持する */
+}
+
+/* アニメーションのキーフレーム */
+@keyframes fadeIn {
+    from {
+      opacity: 0; /* 0%のとき透明度は0 */
+    }
+    to {
+      opacity: 1; /* 100%のとき透明度は1 */
+    }
+}
+
+
+.anime-img{
+    transform-origin: center center;
+    /* 0.25 or 0.75 で終わるとrotate0 でanimeが終了 */
+    animation: yurayura 0.5s linear 10.25;
+}
+
+@keyframes yurayura {
+  0% , 100%{
+      transform: rotate(10deg);
+  }
+  50%{
+      transform: rotate(-10deg);
+  }
+  
+}

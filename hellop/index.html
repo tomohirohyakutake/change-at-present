@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="demo.html">demoへ</a></li>
+        <li><a href="wlile_demo.html">whileへ</a></li>
+        <li><a href="demo2.html">demo2へ</a></li>
+        <li><a href="animedemo.html">animeへ</a></li>
+    </ul>
+    
+    <div class="display-div" id="first-div">
+        <h1 class="h1"><span class="google-font">Hello!<br></span>プレゼント交換会</h1>
+        <button id="btn1">プレゼント交換を始める</button>
+    </div>
+    
+    <div class="display-none" id="second-div">
+        <p id="group-name" class="display-none">グループ名はありますか？特にないならとばしてください</p>
+        <button id="btn2">グループ名はとくにない</button> 
+        <form action="">
+        <label for="">
+            グループ名を入力する
+            <input type="text">
+        </label>
+          <input type="submit" id="btn2-2">
+       </form>
+    </div>
+
+    <div class="display-none" id="third-div">
+        <form method="post">
+            <div>
+                <label for="number-date">何人で交換しますか？最大30人<br></label>
+                <input type="number" name="number-date" value="3" 
+                min="3" max="30" />
+                <input type="submit" id="btn3">
+            </div>
+        </form>
+    </div>
+    
+   
+    <div class="display-none" id="fourth-div">
+        <h2>プレゼント交換会　確認</h2>
+        <div>
+            グループ名
+            人数：5人
+        </div>
+        <div>
+            注意事項<br>
+            抽選開始する前に、参加する人全員に番号を付けてください。<br>
+            1から始まって人数分です、<br>
+            抽選結果は２=>７のように表示しますので、自分の番号を忘れないようにしましょう
+        </div>
+        <button id="btn4">ok,交換抽選はじめ</button>
+        <button id="btn4-2">やり直す</button>
+    </div>
+
+    <div class="display-none" id="fifth_div">
+      <h2>抽選スタート</h2>
+      <img src="chusenbox.png" class="" id="anime_image">
+      <button class="m-16 fade-in-5s">抽選結果へ</button>
+    </div>
+
+
+    <script>
+
+        let forms = document.querySelectorAll("form");
+
+
+
+        const first_div = document.getElementById("first-div");
+        const second_div = document.getElementById("second-div");
+        const third_div = document.getElementById("third-div");
+        const fourth_div = document.getElementById("fourth-div");
+        const anime_image = document.getElementById('anime_image');
+
+      
+
+        const first_btn = document.getElementById("btn1");
+        const second_btn = document.getElementById("btn2");
+        const second_sub_btn = document.getElementById("btn2-2");
+        const third_btn = document.getElementById("btn3");
+        const fourth_btn = document.getElementById("btn4");
+        const fourth_rtn_btn = document.getElementById("btn4-2");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // ボタンクリック時の処理を定義する
+
+        // console.log(second_sub_btn);
+        // console.log(second_btn);
+
+        first_btn.addEventListener("click", () => {
+          // 要素を非表示にする
+        //   first_div.style.display = "none";
+          first_div.classList.add("display-none");
+          second_div.classList.remove("display-none");
+          second_div.classList.add("fade-in");
+        });
+
+       
+     
+
+        second_btn.addEventListener("click", () => {
+          // 要素を非表示にする
+          first_div.style.display = "none";
+          second_div.classList.add("display-none");
+          third_div.classList.remove("display-none");
+          third_div.classList.add("fade-in");
+        });
+
+          // form の submit 時のリセット回避　ないとTOPに戻る
+          for(let i=0; i < forms.length; i++) {
+          forms[i].addEventListener("click", function(event) {
+            event.preventDefault();
+          })
+        };
+
+      
+        second_sub_btn.addEventListener("click", () => {
+        
+          second_div.classList.add("display-none");
+          third_div.classList.remove("display-none");
+          third_div.classList.add("fade-in");
+        });
+
+        third_btn.addEventListener("click", () => {
+      
+          third_div.classList.add("display-none");
+          fourth_div.classList.remove("display-none");
+          fourth_div.classList.add("fade-in");
+        });
+       
+        fourth_btn.addEventListener("click", () => {
+      
+          fourth_div.classList.add("display-none");
+          fifth_div.classList.remove("display-none");
+          fifth_div.classList.add("fade-in");
+          anime_image.classList.add('anime-img')
+        });
+
+        fourth_rtn_btn.addEventListener("click", () => {
+      
+          fourth_div.classList.add("display-none");
+          second_div.classList.remove("display-none");
+          second_div.classList.add("fade-in");
+        });
+
+        console.log(fifth_div)
+        // console.log(fourth-div)
+
+
+
+         // 抽選箱 10秒後にアニメーションを終了する
+        // setTimeout(function() {
+        //   const anime_img = document.querySelector(".anime-img");
+        //   anime_img.style.animation = "none"; // アニメーションを停止
+        // }, 20000);
+
+
+        // 空のオブジェクトを作成
+//         let obj = {};
+
+//         // キーと値をランダムに割り当てる
+//         let keys = Array.from({length: 9}, (_, i) => i + 1); // 1から9の整数の配列を作成
+//         let values = Array.from({length: 9}, (_, i) => i + 1); // 1から9の整数の配列を作成
+
+// // キーと値をランダムに選択して割り当てる
+// while (keys.length > 0 && values.length > 0) {
+//   let key = keys[Math.floor(Math.random() * keys.length)]; // キーをランダムに選択する
+//   let value = values[Math.floor(Math.random() * values.length)]; // 値をランダムに選択する
+//   obj[key] = value; // キーと値をオブジェクトに割り当てる
+//   keys.splice(keys.indexOf(key), 1); // 選択されたキーを削除する
+//   values.splice(values.indexOf(value), 1); // 選択された値を削除する
+// }
+
+// // オブジェクトを表示する
+// console.log(obj);
+
+// // キーと値を画面に表示する
+// for (let [key, value] of Object.entries(obj)) {
+//   console.log(`${key} => ${value}`);
+// }
+    </script>
+
+  
+
+
+</body>
+</html>

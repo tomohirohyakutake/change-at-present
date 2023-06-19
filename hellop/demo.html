@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <style>
+       
+
+    </style>
+</head>
+<body>
+    <a href="index.html">indexへ</index></a>
+    <!-- <div class="1st-div">
+        1 
+        <button>next</button>
+    </div>
+    <div class="2nd-div">
+        2 
+        <button>next</button>
+    </div>
+    <div class="3rd-div">
+        3 
+        <button>next</button>
+    </div>
+    <div class="sth-div">
+        1 
+        <button>next</button>
+    </div>
+    javascriptで
+    1のdiv　のbutton　をclickしたら、消えて次の２のdivが表示される、
+    2のbuttonを押したら、消えて次の３のdivが表示されるコードを教えてください -->
+
+    <div class="demo-div" id="first-div">
+        
+        <button id="btn1">next</button>
+      </div>
+      <div class="demo-div display-none fade-in" id="second-div">
+        2
+        <button id="btn2">next</button>
+      </div>
+   
+      </style>
+      <script>
+        const first_div = document.getElementById("first-div");
+        const second_div = document.getElementById("second-div");
+        const first_btn = document.getElementById("btn1");
+        // ボタンクリック時の処理を定義する
+
+        first_btn.addEventListener("click", () => {
+          // 要素を非表示にする
+          // first_div.style.display = "none";
+          first_div.classList.add("display-none");
+          second_div.classList.remove("display-none");
+          // secondiv.classList.remove("foo");
+          second_div.classList.add("fade-in");
+        });
+      </script>
+    
+<!-- 
+<script>
+    // 最初に表示される要素を設定する
+    let currentDiv = document.querySelector(".1st-div");
+    let curDiv = document.getElementById("1st-div");
+    console.log(currentDiv);
+  
+    // ボタンクリック時の処理を定義する
+    document.getElementById("btn1").addEventListener("click", function() {
+      // 現在の要素を非表示にする
+    //   currentDiv.classList.add("display-none");
+    curDiv.classList.add("display-none");
+      // 次の要素を表示する
+    //   currentDiv = document.querySelector(".2nd-div");
+    //   currentDiv.classList.remove("display-none");
+    //   currentDiv.classList.add("display-block");
+    });
+  
+    document.getElementById("btn2").addEventListener("click", function() {
+      currentDiv.classList.add("display-none");
+      currentDiv = document.querySelector(".sth-div");
+      currentDiv.classList.remove("display-none");
+      currentDiv.classList.add("display-block");
+    });
+  </script> -->
+
+
+
+
+   
+      <!-- <div class="3rd-div">
+        3
+        <button id="btn3">next</button>
+      </div>
+      <div class="sth-div">
+        4
+      </div> -->
+
+      <!-- <script>
+        // 最初に表示される要素を設定する
+        let currentDiv = document.querySelector(".1st-div");
+        currentDiv.style.display = "block";
+      
+        // ボタンクリック時の処理を定義する
+        document.getElementById("btn1").addEventListener("click", function() {
+          // 現在の要素を非表示にする
+          currentDiv.style.display = "none";
+          // 次の要素を表示する
+          currentDiv = document.querySelector(".2nd-div");
+          currentDiv.style.display = "block";
+        });
+      
+        document.getElementById("btn2").addEventListener("click", function() {
+          currentDiv.style.display = "none";
+          currentDiv = document.querySelector(".3rd-div");
+          currentDiv.style.display = "block";
+        });
+      
+        document.getElementById("btn3").addEventListener("click", function() {
+          currentDiv.style.display = "none";
+          currentDiv = document.querySelector(".sth-div");
+          currentDiv.style.display = "block";
+        });
+      </script> -->
+
+
+</body>
+</html>

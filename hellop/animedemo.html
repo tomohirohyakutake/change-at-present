@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .anime-img{
+    transform-origin: center center;
+    /* animation: yurayura 0.5s linear infinite; */
+    animation: yurayura 0.5s linear 10;
+}
+
+@keyframes yurayura {
+  0% , 100%{
+      transform: rotate(10deg);
+  }
+  50%{
+      transform: rotate(-10deg);
+  }
+  
+}
+    </style>
+</head>
+<body>
+    <a href="index.html">indexへ</a>
+   
+
+    <img src="chusenbox.png" class="anime-img">
+
+    <script>
+        // 20秒後にアニメーションを終了する
+        setTimeout(function() {
+          const anime_img = document.querySelector(".anime-img");
+          anime_img.style.animation = "none"; // アニメーションを停止
+        }, 10000);
+      </script>
+
+</body>
+</html>
